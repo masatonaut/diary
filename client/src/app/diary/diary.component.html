@@ -3,6 +3,7 @@
   <li *ngFor="let diary of diaries">
     <h3>{{ diary.title }}</h3>
     <p>{{ diary.content }}</p>
+    <p>Date: {{ diary.created_at | date }}</p>
     <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
   </li>
 </ul>

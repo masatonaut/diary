@@ -4,10 +4,8 @@ import { DiaryService } from '../diary.service';
 
 @Component({
   selector: 'app-new-entry',
-  standalone: true,
-  imports: [],
   templateUrl: './new-entry.component.html',
-  styleUrl: './new-entry.component.css',
+  styleUrls: ['./new-entry.component.css'],
 })
 export class NewEntryComponent {
   title: string = '';
@@ -16,10 +14,13 @@ export class NewEntryComponent {
   constructor(private diaryService: DiaryService, private router: Router) {}
 
   createDiary(): void {
-    this.diaryService
-      .createDiary({ title: this.title, content: this.content })
-      .subscribe(() => {
-        this.router.navigate(['/diary']);
-      });
+    const newDiary = {
+      title: this.title,
+      content: this.content,
+      created_at: new Date().toISOString(),
+    };
+    this.diaryService.createDiary(newDiary).subscribe(() => {
+      this.router.navigate(['/diary']);
+    });
   }
 }

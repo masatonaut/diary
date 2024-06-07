@@ -4,10 +4,8 @@ import { DiaryService } from '../diary.service';
 
 @Component({
   selector: 'app-edit-entry',
-  standalone: true,
-  imports: [],
   templateUrl: './edit-entry.component.html',
-  styleUrl: './edit-entry.component.css',
+  styleUrls: ['./edit-entry.component.css'],
 })
 export class EditEntryComponent implements OnInit {
   id!: number;
@@ -29,10 +27,12 @@ export class EditEntryComponent implements OnInit {
   }
 
   updateDiary(): void {
-    this.diaryService
-      .updateDiary(this.id, { title: this.title, content: this.content })
-      .subscribe(() => {
-        this.router.navigate(['/diary']);
-      });
+    const updatedDiary = {
+      title: this.title,
+      content: this.content,
+    };
+    this.diaryService.updateDiary(this.id, updatedDiary).subscribe(() => {
+      this.router.navigate(['/diary']);
+    });
   }
 }

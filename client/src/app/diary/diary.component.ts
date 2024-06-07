@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DiaryService } from '../diary.service';
 
 @Component({
   selector: 'app-diary',
-  standalone: true,
-  imports: [],
   templateUrl: './diary.component.html',
-  styleUrl: './diary.component.css',
+  styleUrls: ['./diary.component.css'],
 })
-export class DiaryComponent {
+export class DiaryComponent implements OnInit {
   diaries: any[] = [];
 
   constructor(private diaryService: DiaryService) {}
