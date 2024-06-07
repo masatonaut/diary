@@ -1,0 +1,9 @@
+<h2>Diary</h2>
+<ul>
+  <li *ngFor="let diary of diaries">
+    <h3>{{ diary.title }}</h3>
+    <p>{{ diary.content }}</p>
+    <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
+  </li>
+</ul>
+<a [routerLink]="['/new-entry']">New Diary Entry</a>
