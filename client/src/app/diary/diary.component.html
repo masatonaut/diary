@@ -1,6 +1,5 @@
 <div *ngFor="let diary of diaries">
   <h2>{{ diary.title }}</h2>
-  <p>Date: {{ diary.created_at | date }}</p>
   <p>{{ diary.content }}</p>
   <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
 </div>
