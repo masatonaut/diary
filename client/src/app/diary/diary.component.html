@@ -1,10 +1,7 @@
-<h2>Diary</h2>
-<ul>
-  <li *ngFor="let diary of diaries">
-    <h3>{{ diary.title }}</h3>
-    <p>{{ diary.content }}</p>
-    <p>Date: {{ diary.created_at | date }}</p>
-    <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
-  </li>
-</ul>
+<div *ngFor="let diary of diaries">
+  <h2>{{ diary.title }}</h2>
+  <p>Date: {{ diary.created_at | date }}</p>
+  <p>{{ diary.content }}</p>
+  <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
+</div>
 <a [routerLink]="['/new-entry']">New Diary Entry</a>

@@ -1,7 +1,7 @@
-<h2>Edit Diary Entry</h2>
-<form (ngSubmit)="updateDiary()">
+<form (ngSubmit)="saveEntry()">
   <label for="title">Title:</label>
   <input id="title" [(ngModel)]="title" name="title" required />
+
   <label for="content">Content:</label>
   <textarea
     id="content"
@@ -9,5 +9,6 @@
     name="content"
     required
   ></textarea>
-  <button type="submit">Update</button>
+
+  <button type="submit">Save</button>
 </form>

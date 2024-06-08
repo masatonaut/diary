@@ -1,20 +1,22 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    RouterOutlet,
+    HttpClientModule,
+    NavbarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   title = 'client';
-  shouldShowButton = true;
-
-  toggleButton() {
-    this.shouldShowButton = !this.shouldShowButton;
-  }
 }
