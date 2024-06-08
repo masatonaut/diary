@@ -31,3 +31,5 @@ export class DiaryService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
+export { Diary };

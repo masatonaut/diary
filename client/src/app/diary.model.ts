@@ -2,5 +2,6 @@ export interface Diary {
   id: number;
   title: string;
   content: string;
-  date: string;
+  created_at: Date;
+  updated_at: Date;
 }

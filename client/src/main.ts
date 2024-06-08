@@ -1,15 +1,13 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { provideRouter, RouterModule } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { MainPageComponent } from './app/main-page/main-page.component';
 import { DiaryComponent } from './app/diary/diary.component';
 import { NewEntryComponent } from './app/new-entry/new-entry.component';
 import { EditEntryComponent } from './app/edit-entry/edit-entry.component';
 import { AboutComponent } from './app/about/about.component';
-import { NavbarComponent } from './app/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes = [
   { path: '', component: MainPageComponent },
@@ -20,8 +18,5 @@ const routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(routes),
-    importProvidersFrom(HttpClientModule, FormsModule),
-  ],
+  providers: [provideRouter(routes), importProvidersFrom(HttpClientModule)],
 }).catch((err) => console.error(err));
