@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DiaryService, Diary } from '../diary.service';
 
@@ -17,7 +17,7 @@ export class NewEntryComponent {
   title: string = '';
   content: string = '';
 
-  constructor(private diaryService: DiaryService) {}
+  constructor(private diaryService: DiaryService, private router: Router) {} // Router を注入
 
   addEntry() {
     const newDiary: Diary = {
@@ -27,6 +27,8 @@ export class NewEntryComponent {
       created_at: new Date(),
       updated_at: new Date(),
     };
-    this.diaryService.createDiary(newDiary).subscribe(() => {});
+    this.diaryService.createDiary(newDiary).subscribe(() => {
+      this.router.navigate(['/diary']);
+    });
   }
 }
