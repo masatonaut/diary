@@ -1,14 +1,20 @@
-<form (ngSubmit)="addEntry()">
-  <label for="title">Title:</label>
-  <input id="title" [(ngModel)]="title" name="title" required />
+<div class="entry-form">
+  <form (ngSubmit)="addEntry()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="title" name="title" required />
+    </div>
 
-  <label for="content">Content:</label>
-  <textarea
-    id="content"
-    [(ngModel)]="content"
-    name="content"
-    required
-  ></textarea>
+    <div class="form-group">
+      <label for="content">Content:</label>
+      <textarea
+        id="content"
+        [(ngModel)]="content"
+        name="content"
+        required
+      ></textarea>
+    </div>
 
-  <button type="submit">Add</button>
-</form>
+    <button type="submit">Add</button>
+  </form>
+</div>

@@ -1,8 +1,8 @@
 <div class="main-content">
   <h1>Welcome to the Diary App</h1>
-  <img src="assets/diary-image.png" alt="Diary Image" class="diary-image" />
+  <img src="assets/diary-image.png" alt="Diary Image" />
   <p>This application allows you to keep track of your diary entries.</p>
   <p>Number of diary entries: {{ diaryCount }}</p>
-  <p>Earliest entry: {{ earliestEntryDate | date: "dd-MM-yyyy" }}</p>
-  <p>Latest entry: {{ latestEntryDate | date: "dd-MM-yyyy" }}</p>
+  <p>Earliest entry: {{ earliestEntryDate | date: "MM-dd-yyyy" }}</p>
+  <p>Latest entry: {{ latestEntryDate | date: "MM-dd-yyyy" }}</p>
 </div>
