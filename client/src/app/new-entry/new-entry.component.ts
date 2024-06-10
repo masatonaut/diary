@@ -17,7 +17,7 @@ export class NewEntryComponent {
   title: string = '';
   content: string = '';
 
-  constructor(private diaryService: DiaryService, private router: Router) {} // Router を注入
+  constructor(private diaryService: DiaryService, private router: Router) {}
 
   addEntry() {
     const newDiary: Diary = {

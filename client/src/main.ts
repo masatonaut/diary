@@ -7,7 +7,7 @@ import { DiaryComponent } from './app/diary/diary.component';
 import { NewEntryComponent } from './app/new-entry/new-entry.component';
 import { EditEntryComponent } from './app/edit-entry/edit-entry.component';
 import { AboutComponent } from './app/about/about.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 const routes = [
   { path: '', component: MainPageComponent },
@@ -18,5 +18,5 @@ const routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes), importProvidersFrom(HttpClientModule)],
+  providers: [provideRouter(routes), provideHttpClient()],
 }).catch((err) => console.error(err));

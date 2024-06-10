@@ -1,8 +1,6 @@
-<div *ngFor="let diary of diaries">
-  <h3>{{ diary.title }}</h3>
-  <p>{{ diary.content }}</p>
-  <p>Date: {{ diary.created_at | date }}</p>
+<div *ngFor="let diary of diaries; let i = index" class="diary-entry">
+  <h3>{{ i + 1 }}. {{ diary.title }}</h3>
+  <p [innerHTML]="diary.content | newlineToBr"></p>
+  <p>Date: {{ diary.created_at | date: "MMM d, y" }}</p>
   <a [routerLink]="['/edit-entry', diary.id]">Edit</a>
-  <hr />
 </div>
-<a [routerLink]="['/new-entry']">New Diary Entry</a>
